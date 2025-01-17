@@ -350,7 +350,7 @@ class GitCommandManager {
   }
 
   async lfsInstall(): Promise<void> {
-    await this.execGit(['lfs', 'install', '--local'])
+    await this.execGit(['lfs', 'install', '--local', '--force'])
   }
 
   async log1(format?: string): Promise<string> {
