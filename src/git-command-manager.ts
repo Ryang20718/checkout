@@ -350,14 +350,7 @@ class GitCommandManager {
   }
 
   async lfsInstall(): Promise<void> {
-    try {
-      await this.execGit(['lfs', 'install', '--local']);
-    } catch (error) {
-      if (error.message && error.message.includes('Hook already exists: pre-push')) {
-        return
-      }
-      throw error
-    }
+    await this.execGit(['lfs', 'install', '--local'])
   }
 
   async log1(format?: string): Promise<string> {
